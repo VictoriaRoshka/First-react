@@ -37,7 +37,7 @@ function App() {
       
       <main className='bg-gray-100 max-w-screen-lg mx-auto'>
         <div className='max-w-5xl mx-auto py-10 font-serif'>
-          <div className='flex gap-4 justify-center'>
+          <div className='flex gap-4 mx-5 justify-center inputBox'>
           <input className='border-4'/>
           <Button title="Добавить"/>
           </div>
