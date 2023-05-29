@@ -31,11 +31,15 @@ function App() {
 
   const addElement = () => {
     const newProduct = {
-      id: uuidv4,
+      id: uuidv4(),
       name: newElement
     }
     setGoods([...goods, newProduct])
+
+    setNewElement('')
   }
+
+
 
 
   return (
@@ -43,6 +47,7 @@ function App() {
       <Header/>
       
       <main className='bg-gray-100 max-w-screen-lg mx-auto'>
+        
         <div className='max-w-5xl mx-auto py-10 font-serif'>
           <div className='flex gap-4 mx-5 justify-center inputBox'>
           <input className='border-4' value={newElement} onChange={(event) => setNewElement(event.target.value)}/>
