@@ -9,19 +9,14 @@ function App() {
 
   const [goods, setGoods] = useState (
     [{id:1,
-      number: '1.',
       name:'Хлеб'},
       {id:2,
-      number: '2.',
       name:'Яйца'},
       {id:3,
-      number: '3.',
       name:'Молоко'},
       {id:4,
-      number: '4.',
       name:'Бананы'},
       {id:5,
-      number: '5.',
       name:'Печенье'}
 
     ]
@@ -43,9 +38,9 @@ function App() {
           </div>
           <div>
             {goods.length === 0 && (<div className='text-center text-blue-300 text-2xl px-5 py-5'>Список пуст</div>)}
-            {goods.length > 0 && goods.map((element) => {
+            {goods.length > 0 && goods.map((element, index) => {
               return(
-                <Element key={element.id} element={element} deleteElement={deleteElement}/>
+                <Element index={index} key={element.id} element={element} deleteElement={deleteElement}/>
 
               )
             })}
