@@ -42,7 +42,8 @@ function App() {
           <Button title="Добавить"/>
           </div>
           <div>
-            {goods.map((element) => {
+            {goods.length === 0 && (<div className='text-center text-blue-300 text-2xl px-5 py-5'>Список пуст</div>)}
+            {goods.length > 0 && goods.map((element) => {
               return(
                 <Element key={element.id} element={element} deleteElement={deleteElement}/>
 
