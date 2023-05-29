@@ -26,6 +26,11 @@ function App() {
 
     ]
   )
+  const deleteElement = (id) => {
+    const filteredElement = goods.filter(element => element.id !== id)
+    setGoods(filteredElement)
+  }
+
   return (
     <div>
       <Header/>
@@ -39,7 +44,7 @@ function App() {
           <div>
             {goods.map((element) => {
               return(
-                <Element element={element} />
+                <Element key={element.id} element={element} deleteElement={deleteElement}/>
 
               )
             })}

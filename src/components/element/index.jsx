@@ -8,7 +8,7 @@ const Element = (props) => {
         </div>
         <div className="flex gap-4">
             <input type="checkbox"/>
-            <button>Удалить</button>
+            <button className="hover:underline cursor-pointer" onClick={() => deleteElement(element.id)}>Удалить</button>
         </div>
     </div>
         
