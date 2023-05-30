@@ -46,15 +46,15 @@ function App() {
 
   const checkGoods = (id) => {
 
-    const elements = goods.map((element) => {
-      if(element.id === id) {
-        return {...element, isAdded: !element.isAdded}
+    const items = goods.map((item) => {
+      if(item.id === id) {
+        return {...item, isAdded: !item.isAdded}
       } else {
-        return element
+        return item
       }
     })
 
-    setGoods(elements)
+    setGoods(items)
 
 
 

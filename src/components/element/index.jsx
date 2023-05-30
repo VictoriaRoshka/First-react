@@ -7,7 +7,11 @@ const Element = (props) => {
         <p>{element.name}</p>
         </div>
         <div className="flex gap-4">
-            {element.isAdded === true ? "Куплено" : <button className="hover:underline cursor-pointer" onClick={() => checkGoods(element.id)}>Добавить</button>}
+        <button className="hover:underline cursor-pointer" onClick={() => checkGoods(element.id)}>
+            {
+                element.isAdded === true ? "Куплено" : "Отметить"
+            }
+        </button>
             
             <button className="hover:underline cursor-pointer" onClick={() => deleteElement(element.id)}>Удалить</button>
         </div>
@@ -15,4 +19,6 @@ const Element = (props) => {
         
     )
 }
+
+// {element.isAdded === true ? <img className="w-10" src="public\326568_check_circle_icon.png" alt=""/> : <img className="w-10" src="public\326565_blank_check_circle_icon.png" alt=""/>}
 export default Element
