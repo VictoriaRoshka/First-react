@@ -10,15 +10,20 @@ function App() {
 
   const [goods, setGoods] = useState (
     [{id:1,
-      name:'Хлеб'},
+      name:'Хлеб',
+    isAdded: false},
       {id:2,
-      name:'Яйца'},
+      name:'Яйца',
+      isAdded: true},
       {id:3,
-      name:'Молоко'},
+      name:'Молоко',
+      isAdded: true},
       {id:4,
-      name:'Бананы'},
+      name:'Бананы',
+      isAdded: true},
       {id:5,
-      name:'Печенье'}
+      name:'Печенье',
+      isAdded: false}
 
     ]
   )
@@ -39,8 +44,21 @@ function App() {
     setNewElement('')
   }
 
+  const checkGoods = (id) => {
+
+    const elements = goods.map((element) => {
+      if(element.id === id) {
+        return {...element, isAdded: !element.isAdded}
+      } else {
+        return element
+      }
+    })
+
+    setGoods(elements)
 
 
+
+  }
 
   return (
     <div>
@@ -57,7 +75,7 @@ function App() {
             {goods.length === 0 && (<div className='text-center text-blue-300 text-2xl px-5 py-5'>Список пуст</div>)}
             {goods.length > 0 && goods.map((element, index) => {
               return(
-                <Element index={index} key={element.id} element={element} deleteElement={deleteElement}/>
+                <Element index={index} key={element.id} element={element} deleteElement={deleteElement} checkElement={checkGoods}/>
 
               )
             })}
