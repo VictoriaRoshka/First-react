@@ -14,13 +14,13 @@ function App() {
     isAdded: false},
       {id:2,
       name:'Яйца',
-      isAdded: true},
+      isAdded: false},
       {id:3,
       name:'Молоко',
-      isAdded: true},
+      isAdded: false},
       {id:4,
       name:'Бананы',
-      isAdded: true},
+      isAdded: false},
       {id:5,
       name:'Печенье',
       isAdded: false}
@@ -75,7 +75,7 @@ function App() {
             {goods.length === 0 && (<div className='text-center text-blue-300 text-2xl px-5 py-5'>Список пуст</div>)}
             {goods.length > 0 && goods.map((element, index) => {
               return(
-                <Element index={index} key={element.id} element={element} deleteElement={deleteElement} checkElement={checkGoods}/>
+                <Element index={index} key={element.id} element={element} deleteElement={deleteElement} checkGoods={checkGoods}/>
 
               )
             })}
